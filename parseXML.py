@@ -26,6 +26,7 @@ def parseXML(file_name):
 def exportXML(array, filename):
     # Start with the root element
     root = xml.Element("fichier")
+    root.attrib["titre"] = "BUS 1553B B1  "
 
     for message in array:
         child1 = xml.Element("message")
