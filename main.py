@@ -13,8 +13,11 @@ calc_msg_size_bits_with_array(arrayMessages)
 calc_trans_delay_with_array(arrayMessages)
 
 # Etape 3 vérification de la condition nécessaire d’ordonnançabilité des messages
-check = check_sufficient_ord_cond(arrayMessages)
-print(check)
+condition = check_sufficient_ord_cond(arrayMessages)
+if condition:
+    print("La condition suffisante d'ordonnançabilité est vérifiée.")
+else:
+    print("La condition suffisante d'ordonnançabilité n'est pas vérifiée !")
 
 # Etape 5 export XML
 temps2usecondes(arrayMessages)

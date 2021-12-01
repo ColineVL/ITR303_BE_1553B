@@ -12,8 +12,10 @@ def get_micro_period(messages_array):
 
 
 def check_sufficient_ord_cond(messages_array):
-    l_arrays = np.array([message_dict["sizeBits"] for message_dict in messages_array])
     t_microcycle = get_micro_period(messages_array)
-    c_sum = np.sum(l_arrays) / BANDWIDTH
-    print(c_sum)
+    c_sum = (
+        np.sum([message_dict["sizeBits"] for message_dict in messages_array])
+        / BANDWIDTH
+    )
+    print(c_sum / t_microcycle)
     return c_sum / t_microcycle <= 1
