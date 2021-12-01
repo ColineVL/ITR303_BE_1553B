@@ -1,5 +1,4 @@
 import numpy as np
-from help import calc_msg_size_bits
 
 MASTER = "SXJJ"
 BANDWIDTH = 1e6
@@ -13,9 +12,8 @@ def get_micro_period(messages_array):
 
 
 def check_sufficient_ord_cond(messages_array):
-    l_arrays = np.array(
-        [calc_msg_size_bits(message_dict) for message_dict in messages_array]
-    )
+    l_arrays = np.array([message_dict["sizeBits"] for message_dict in messages_array])
     t_microcycle = get_micro_period(messages_array)
     c_sum = np.sum(l_arrays) / BANDWIDTH
+    print(c_sum)
     return c_sum / t_microcycle <= 1

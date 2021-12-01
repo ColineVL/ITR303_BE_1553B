@@ -22,4 +22,9 @@ def calc_msg_size_bits(message_dict):
         else 106
     )
     taille_tot = overhead_com + 20 * int(message_dict["taille_mes"])
-    return taille_tot
+    message_dict["sizeBits"] = taille_tot
+
+
+def calc_msg_size_bits_with_array(arrayMessages):
+    for message in arrayMessages:
+        calc_msg_size_bits(message)
