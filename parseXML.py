@@ -7,9 +7,7 @@ def parseXML(file_name):
     array = []
     # Parse XML with ElementTree
     tree = ET.ElementTree(file=file_name)
-    print(tree.getroot())
     root = tree.getroot()
-    print("tag=%s, attrib=%s" % (root.tag, root.attrib))
 
     # get the information via the children!
     messages = root.getchildren()
