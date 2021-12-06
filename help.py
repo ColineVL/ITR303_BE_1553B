@@ -8,7 +8,6 @@ def temps2usecondes(arrayMessages):
         message["DT"] = str(message["transDelay"] * 1e6)
         # délai d’accès au médium (<DMAC>)
         # délai de bout en bout(<DBEB>)
-        # test d’ordonnançabilité(<Test>)
 
 
 def calc_msg_size_bits(message_dict):

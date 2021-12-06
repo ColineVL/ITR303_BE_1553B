@@ -21,10 +21,13 @@ def parseXML(file_name):
     return array
 
 
-def exportXML(array, filename):
+def exportXML(array, filename, condition):
     # Start with the root element
     root = xml.Element("fichier")
     root.attrib["titre"] = "BUS 1553B B1  "
+
+    testNode = xml.SubElement(root, "Test")
+    testNode.text = "Condition verifiee" if condition else "Condition non verifiee"
 
     for message in array:
         child1 = xml.Element("message")
@@ -40,7 +43,6 @@ def exportXML(array, filename):
             "DT",
             # "DMAC",
             # "DBEB",
-            # "Test",
         ]
         for key in keys:
             msgNode = xml.SubElement(child1, key)

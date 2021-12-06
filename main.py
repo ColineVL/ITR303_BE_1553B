@@ -21,4 +21,4 @@ else:
 
 # Etape 5 export XML
 temps2usecondes(arrayMessages)
-exportXML(arrayMessages, "sortie.xml")
+exportXML(arrayMessages, "sortie.xml", condition)
