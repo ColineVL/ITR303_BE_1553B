@@ -15,9 +15,9 @@ calc_trans_delay_with_array(arrayMessages)
 # Etape 3 vérification de la condition nécessaire d’ordonnançabilité des messages
 condition = check_sufficient_ord_cond(arrayMessages)
 if condition:
-    print("La condition suffisante d'ordonnançabilité est vérifiée.")
+    print("SC verified")
 else:
-    print("La condition suffisante d'ordonnançabilité n'est pas vérifiée !")
+    print("SC not verified!")
 
 # Etape 5 export XML
 temps2usecondes(arrayMessages)
