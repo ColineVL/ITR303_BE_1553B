@@ -41,12 +41,12 @@ def exportXML(array, filename, condition):
             "emetteur",
             "recepteur",
             "DT",
-            # "DMAC",
-            # "DBEB",
+            "DMAC",
+            "DBEB",
         ]
         for key in keys:
             msgNode = xml.SubElement(child1, key)
-            msgNode.text = message[key]
+            msgNode.text = str(message[key])
 
     tree = xml.ElementTree(root)
     with open(filename, "wb") as fh:
