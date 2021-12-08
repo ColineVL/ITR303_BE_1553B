@@ -15,6 +15,7 @@ def calc_access_delay_vect(message_dict_array):
     => priority = frequence
     """
 
+    # transform input to dataframe for ease of manipulation
     messages_df = pd.DataFrame(message_dict_array)
     messages_df = messages_df.astype(
         dtype={
@@ -29,7 +30,7 @@ def calc_access_delay_vect(message_dict_array):
     wcrt_dict = {}
     for index in messages_df.index:
 
-        # extracting messages by priority
+        # Split messages by strictly lower and upper priorities
         strictly_less_prior_msgs_df = messages_df[
             messages_df["frequence"] < messages_df.loc[index]["frequence"]
         ]
@@ -67,6 +68,9 @@ def calc_access_delay_vect(message_dict_array):
     # b2 = DBEB - b3
     messages_df["DMAC"] = messages_df["DBEB"] - messages_df["DT"]
 
+    # add results to the array of messages
     for index in messages_df.index:
         message_dict_array[index]["DMAC"] = messages_df.loc[index]["DMAC"]
         message_dict_array[index]["DBEB"] = messages_df.loc[index]["DBEB"]
+    
+    return
