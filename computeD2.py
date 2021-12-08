@@ -47,16 +47,17 @@ def calc_access_delay_vect(message_dict_array):
         W_old = 0
         while W != W_old:
             W_old = W
-            truc1 = messages_df.loc[index]["C"]
-            truc2 = strictly_less_prior_msgs_df["C"].max()
-            truc25 = truc2 if not np.isnan(truc2) else 0
-            truc3 = (
+            c1 = messages_df.loc[index]["C"]
+            intermediaire = strictly_less_prior_msgs_df["C"].max()
+            less_prior_max = intermediaire if not np.isnan(intermediaire) else 0
+            more_prior_sum = (
                 more_prior_msg_df["C"]
                 * more_prior_msg_df["frequence"].apply(lambda x: mt.ceil(W * x))
             ).sum()
-            W = truc1 + truc25 + truc3
+            W = c1 + less_prior_max + more_prior_sum
             if W > T:
-                print("condition reached")
+                print("W>T reached")
+                print(message_dict_array[index])
                 print(T)
                 print(W)
                 print(W_old)
