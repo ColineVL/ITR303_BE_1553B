@@ -1,5 +1,4 @@
-MASTER = "SXJJ"
-BANDWIDTH = 1e6
+from help import BANDWIDTH
 
 
 def calc_trans_delay(message_dict):
@@ -8,4 +7,4 @@ def calc_trans_delay(message_dict):
 
 def calc_trans_delay_with_array(messages_array):
     for message in messages_array:
-        message["transDelay"] = calc_trans_delay(message)
+        message["DT"] = calc_trans_delay(message)

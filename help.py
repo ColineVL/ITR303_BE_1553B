@@ -2,14 +2,6 @@ MASTER = "SXJJ"
 BANDWIDTH = 1e6
 
 
-def temps2usecondes(arrayMessages):
-    for message in arrayMessages:
-        # délai de transmission (<DT>)
-        message["DT"] = str(message["transDelay"])
-        # délai d’accès au médium (<DMAC>)
-        # délai de bout en bout(<DBEB>)
-
-
 def calc_msg_size_bits(message_dict):
     """
     message_dict["taille_mes"] est en nombre de mots
