@@ -2,6 +2,8 @@
 
 Cours : ITR303
 
+Coline van Leeuwen & Tchinguiz Eskoulov
+
 ## Installation
 
 ```bash
