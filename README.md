@@ -7,3 +7,9 @@ Cours : ITR303
 ```bash
 pip install numpy, pandas
 ```
+
+## Pour lancer
+
+```bash
+python main.py
+```
