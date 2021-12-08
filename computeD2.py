@@ -73,5 +73,5 @@ def calc_access_delay_vect(message_dict_array):
     for index in messages_df.index:
         message_dict_array[index]["DMAC"] = messages_df.loc[index]["DMAC"]
         message_dict_array[index]["DBEB"] = messages_df.loc[index]["DBEB"]
-    
-    return
+
+
