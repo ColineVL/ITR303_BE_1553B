@@ -1,6 +1,6 @@
 from parseXML import exportXML, parseXML
 from computeD3 import calc_trans_delay_with_array
-from help import temps2usecondes, calc_msg_size_bits_with_array
+from help import calc_msg_size_bits_with_array
 from check_sufficient import check_sufficient_ord_cond
 from computeD2 import calc_access_delay_vect
 
@@ -24,5 +24,4 @@ else:
 calc_access_delay_vect(arrayMessages)
 
 # Etape 5 export XML
-temps2usecondes(arrayMessages)
 exportXML(arrayMessages, "sortie.xml", condition)
